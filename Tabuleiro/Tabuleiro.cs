@@ -4,9 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoXadrez.Tabuleiro
+namespace tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
+        public int linha { get; set; }
+        public int coluna { get; set; }
+        private Peca[,] pecas;
+        
+        public Tabuleiro(int linha, int coluna)
+        {
+            this.linha = linha;
+            this.coluna = coluna;
+            pecas = new Peca[linha, coluna];
+        }
+
+        public Peca Peca(int linha, int coluna)
+        {
+            return pecas[linha, coluna];
+        }
     }
 }
