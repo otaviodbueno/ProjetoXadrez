@@ -23,7 +23,6 @@ namespace ProjetoXadrez
                     {
                         Console.Write(tab.Peca(i, j));
                     }
-
                 }
                 Console.WriteLine();
             }
