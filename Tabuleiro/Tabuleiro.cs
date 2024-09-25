@@ -26,8 +26,8 @@ namespace tabuleiro
         }
 
         public Peca Peca(Posicao pos)
-        {
-            return pecas[pos.linha, pos.coluna];
+        {   
+           return pecas[pos.linha, pos.coluna];   
         }
 
         public bool ExistePeca(Posicao pos)
@@ -61,7 +61,7 @@ namespace tabuleiro
 
         public bool PosicaoValida(Posicao pos)
         {
-            if (pos.linha < 0 || pos.linha > linha || pos.coluna < 0 || pos.coluna > coluna)
+            if (pos.linha < 0 || pos.linha > 7 || pos.coluna < 0 || pos.coluna > 7)
             {
                 return false;
             }
