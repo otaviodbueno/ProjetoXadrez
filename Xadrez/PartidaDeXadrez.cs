@@ -16,10 +16,6 @@ namespace Xadrez
         private HashSet<Peca> pecas;
         private HashSet<Peca> capturadas;
 
-
-        
-
-
         public PartidaDeXadrez()
         {
             tab = new Tabuleiro(8, 8);
@@ -128,6 +124,9 @@ namespace Xadrez
             tab.ColocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('e', 2).ToPosicao());
             tab.ColocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('d', 2).ToPosicao());
             tab.ColocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('e', 1).ToPosicao());
+            tab.ColocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('h', 2).ToPosicao());
+            tab.ColocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('a', 2).ToPosicao());
+
 
             tab.ColocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('c', 8).ToPosicao());
             tab.ColocarPeca(new Torre(tab, Cor.Preta), new PosicaoXadrez('c', 7).ToPosicao());

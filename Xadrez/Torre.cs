@@ -29,66 +29,66 @@ namespace Xadrez
             Posicao pos = new Posicao(0, 0);
 
             //acima 
-            pos.DefinirValores(posicao.linha - 1, posicao.coluna);
-            while (tab.PosicaoValida(pos) && PodeMover(pos))
-            {                
-                mat[pos.linha, pos.coluna] = true;
-                if(tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+                pos.DefinirValores(posicao.linha - 1, posicao.coluna);
+                while (tab.PosicaoValida(pos) && PodeMover(pos))
                 {
-                    break;
+                    mat[pos.linha, pos.coluna] = true;
+                    if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+                    {
+                        break;
+                    }
+                    pos.linha = pos.linha - 1;
                 }
-                pos.linha = pos.linha - 1;
-            }
 
-            //Posicao test = new Posicao(6, 8);
+
 
             //direita
-            pos.DefinirValores(posicao.linha, posicao.coluna + 1);            
-            while (tab.PosicaoValida(pos) && PodeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-                if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+            //if (posicao.coluna + 1 <= 7 && posicao.coluna + 1 <= 0)
+            //{
+                pos.DefinirValores(posicao.linha, posicao.coluna + 1);
+                while (tab.PosicaoValida(pos) && PodeMover(pos))
                 {
-                    break;
+                    mat[pos.linha, pos.coluna] = true;
+                    if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+                    {
+                        break;
+                    }
+                    pos.coluna = pos.coluna + 1;
+                    // Chumbando a validação
+                    if (pos.linha == 8 || pos.coluna == 8)
+                    {
+                        break;
+                    }
                 }
-                pos.coluna = pos.coluna + 1;
-                // Chumbando a validação
-                if (pos.linha == 8 || pos.coluna == 8)
-                {
-                    break;
-                }
-            }
+            //}
 
             //abaixo
-            pos.DefinirValores(posicao.linha + 1, posicao.coluna);
-            while (tab.PosicaoValida(pos) && PodeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-                if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+            //if (posicao.linha + 1 <= 7)
+            //{
+                pos.DefinirValores(posicao.linha + 1, posicao.coluna);
+                while (tab.PosicaoValida(pos) && PodeMover(pos))
                 {
-                    break;
+                    mat[pos.linha, pos.coluna] = true;
+                    if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+                    {
+                        break;
+                    }
+                    pos.linha = pos.linha + 1;
                 }
-                pos.linha = pos.linha + 1;
+          //}
 
-                // Chumbando a validação
-                if (pos.linha == 8 || pos.coluna == 8)
-                {
-                    break;
-                }
-            }
 
             //esquerda
-            pos.DefinirValores(posicao.linha, posicao.coluna - 1);
-            while (tab.PosicaoValida(pos) && PodeMover(pos))
-            {
-                mat[pos.linha, pos.coluna] = true;
-                if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+                pos.DefinirValores(posicao.linha, posicao.coluna - 1);
+                while (tab.PosicaoValida(pos) && PodeMover(pos))
                 {
-                    break;
+                    mat[pos.linha, pos.coluna] = true;
+                    if (tab.Peca(pos) != null && tab.Peca(pos).cor != cor)
+                    {
+                        break;
+                    }
+                    pos.coluna = pos.coluna - 1;
                 }
-                pos.coluna = pos.coluna - 1;
-            }
-
             return mat;
         }
     }
