@@ -30,7 +30,7 @@ namespace Xadrez
         public static void ImprimirPecasCapturadas(PartidaDeXadrez Partida)
         {
             Console.WriteLine("Pecas capturadas: ");
-            Console.Write("Branca: ");
+            Console.Write("Brancas: ");
             ImprimirConjunto(Partida.PecasCapturadas(Cor.Branca));
             Console.WriteLine();
             Console.Write("Pretas: ");
